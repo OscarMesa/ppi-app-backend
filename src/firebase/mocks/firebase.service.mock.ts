@@ -2,9 +2,9 @@ import { faker } from '@faker-js/faker';
 
 export const firebaseConfig = {
   apiKey: faker.datatype.string(15),
-  authDomain: 'chiper-faker.firebaseapp.fake',
+  authDomain: 'ppi-faker.firebaseapp.fake',
   databaseURL: faker.datatype.string(15),
-  projectId: 'chiper-faker',
+  projectId: 'ppi-faker',
   storageBucket: faker.internet.url(),
   messagingSenderId: faker.datatype.string(5),
   credentials: faker.datatype.string(10),

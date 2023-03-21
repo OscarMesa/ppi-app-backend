@@ -15,8 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return a object with property called "name" n with value of "chiper"', () => {
-      expect(appController.getHello()).toHaveProperty('name', 'chiper');
+    it('should return a object with property called "name" n with value of "Politécnico Colombiano Jaime Isaza Cadavid"', () => {
+      expect(appController.getHello()).toHaveProperty('name', 'Politécnico Colombiano Jaime Isaza Cadavid');
     });
   });
 });

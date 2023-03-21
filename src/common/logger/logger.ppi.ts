@@ -5,7 +5,7 @@ import {
 } from '@common/logger/logger.ppi.dto';
 import { Logger } from '@nestjs/common';
 
-export class LoggerDelivery {
+export class LoggerPPI {
   log(data: LoggerInfo): void {
     Logger.log({
       stt: 'PPI-APP',

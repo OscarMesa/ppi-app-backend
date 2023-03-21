@@ -1,19 +1,15 @@
-import { Logger } from 'logging-chiper';
-import { LoggerDelivery } from '@common/logger/logger.ppi';
+import { LoggerPPI } from '@common/logger/logger.ppi';
+import { Logger } from '@nestjs/common';
 
-Logger.init({
-  projectId: 'test',
-  service: 'tes',
-});
-describe('LoggerDelivery', () => {
-  let logger: LoggerDelivery;
+describe('LoggerPPI', () => {
+  let logger: LoggerPPI;
 
   beforeEach(async () => {
-    logger = new LoggerDelivery();
+    logger = new LoggerPPI();
   });
 
   it('should be defined', () => {
-    expect(LoggerDelivery).toBeDefined();
+    expect(LoggerPPI).toBeDefined();
   });
 
   it('should log', () => {

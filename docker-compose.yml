@@ -2,11 +2,5 @@ version: '3.8'
 
 services:
   db:
-    image: mysql:8.0
-    container_name: chiper-control-tower-api
+    container_name: ppi-api
     restart: 'no'
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: toor
-      MYSQL_DATABASE: ms-vivo-delivery

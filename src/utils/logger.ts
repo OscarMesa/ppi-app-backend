@@ -1,5 +1,5 @@
 const loggingDetails = (context, functionName, message): object => ({
-  stt: process.env.LOGGING_CHIPER_STT,
+  stt: process.env.LOGGING_MS,
   context,
   fuctionName: functionName,
   message,
@@ -9,7 +9,7 @@ const loggingDetails = (context, functionName, message): object => ({
 });
 
 const loggingError = (context, functionName, error): object => ({
-  stt: process.env.LOGGING_CHIPER_STT,
+  stt: process.env.LOGGING_MS,
   context,
   fuctionName: functionName,
   message: error.message,

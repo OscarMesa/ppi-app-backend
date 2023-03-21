@@ -19,5 +19,5 @@ describe('AppController (e2e)', () => {
     request(app.getHttpServer())
       .get('/')
       .expect(200)
-      .expect('Control Tower API!'));
+      .expect('PPI APP!'));
 });

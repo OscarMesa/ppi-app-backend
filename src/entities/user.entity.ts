@@ -1,37 +1,37 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Student } from "./student.entity";
+import { Teacher } from "./teacher.entity";
 
-import { Exclude } from 'class-transformer';
 
-@Entity()
+@Entity("user", { schema: "public" })
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ type: "integer", name: "id" })
   id: number;
 
-  @Column({ type: 'varchar', length: 255 })
+  @Column("character varying", { name: "email", length: 255 })
   email: string;
 
-  @Exclude()
-  @Column({ type: 'varchar', length: 255 })
+  @Column("character varying", { name: "password", length: 255 })
   password: string;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column("character varying", { name: "role", length: 100 })
   role: string;
 
-  @CreateDateColumn({
-    type: 'timestamptz',
-    default: () => 'CURRENT_TIMESTAMP',
+  @Column("timestamp with time zone", {
+    name: "createAt",
+    default: () => "CURRENT_TIMESTAMP",
   })
   createAt: Date;
 
-  @UpdateDateColumn({
-    type: 'timestamptz',
-    default: () => 'CURRENT_TIMESTAMP',
+  @Column("timestamp with time zone", {
+    name: "updateAt",
+    default: () => "CURRENT_TIMESTAMP",
   })
   updateAt: Date;
+
+  @OneToMany(() => Student, (student) => student.idUser)
+  students: Student[];
+
+  @OneToMany(() => Teacher, (teacher) => teacher.idUser)
+  teachers: Teacher[];
 }

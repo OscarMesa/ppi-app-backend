@@ -1,9 +1,8 @@
-import {MigrationInterface, QueryRunner} from "typeorm";
+import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class TeamMembers1679440573422 implements MigrationInterface {
-
-    public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query(`CREATE TABLE "public"."team_members" (
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`CREATE TABLE "public"."team_members" (
                                 "id_member" serial NOT NULL,
                                 "id_team" int2 NOT NULL,
                                 "id_student" int2 NOT NULL,
@@ -14,10 +13,9 @@ export class TeamMembers1679440573422 implements MigrationInterface {
                                 CONSTRAINT "fk_student_member" FOREIGN KEY ("id_student") REFERENCES "public"."student" ("student_id") ON DELETE RESTRICT ON UPDATE CASCADE
           )
           ;`);
-    }
+  }
 
-    public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query(`DROP TABLE team_members`);
-    }
-
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`DROP TABLE team_members`);
+  }
 }

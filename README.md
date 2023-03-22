@@ -57,6 +57,9 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+## Generador de modelos
+
+node_modules\.bin\typeorm-model-generator  -h localhost -d ppi -p 5432 -u postgres -x admin -e postgres 
 
 ## Support
 

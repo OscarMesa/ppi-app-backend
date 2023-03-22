@@ -16,6 +16,7 @@ import * as admin from 'firebase-admin';
 import { FirebaseAdminModule } from '@aginix/nestjs-firebase-admin';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
+import { StudentsModule } from './students/students.module';
 
 const API_KEY = '12345634';
 const API_KEY_PROD = 'PROD1212121SA';
@@ -62,6 +63,8 @@ const API_KEY_PROD = 'PROD1212121SA';
 
     // Dev Modules
     UsersModule,
+
+    StudentsModule,
   ],
   controllers: [AppController, HealthController],
   providers: [

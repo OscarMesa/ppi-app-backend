@@ -10,7 +10,7 @@ import { SwaggerModule } from '@nestjs/swagger';
 
 import { createdocument } from '@swagger/index';
 import sdk from '@common/traicing/autoTracing';
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 
 // import { ClusterService } from './cluster.service';
@@ -41,6 +41,9 @@ async function bootstrap(): Promise<void> {
     credentials: true,
     maxAge: 86400,
   });
+
+  // ValidationPipe
+  app.useGlobalPipes(new ValidationPipe());
 
   // getting the port env var
   const PORT = configService.get<number>('config.app.port');

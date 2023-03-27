@@ -10,7 +10,6 @@ export class AuthController {
   @Post('login')
   async login(@Request() req): Promise<object> {
     const { uid, email, emailVerified } = req.user;
-
     // Use the AuthService to generate a token and redirect the user to the app.
     const token = await this.authService.generateToken(uid);
     const redirectUrl = this.authService.generateRedirectUrl(token);

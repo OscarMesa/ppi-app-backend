@@ -10,9 +10,9 @@ export class FirebaseAuthStrategy extends PassportStrategy(Strategy) {
     super();
   }
 
-  async validate(req, user): Promise<DecodedIdToken> {
-    Logger.log({ user });
+  async validate(req): Promise<DecodedIdToken> {
     const idToken = req.headers.authorization.split(' ')[1];
+    Logger.log({ idToken });
     const decoded = await admin.auth().verifyIdToken(idToken);
     return decoded;
   }

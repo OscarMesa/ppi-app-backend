@@ -4,23 +4,24 @@ import { UpdateStudentDto } from '../dto/update-student.dto';
 
 @Injectable()
 export class StudentsService {
-  create(createStudentDto: CreateStudentDto) {
-    return 'This action adds a new student';
+  create(createStudentDto: CreateStudentDto): object {
+    return createStudentDto;
   }
 
-  findAll() {
-    return `This action returns all students`;
+  findAll(): object[] {
+    return [];
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} student`;
+  findOne(id: number): object {
+    return { id };
   }
 
-  update(id: number, updateStudentDto: UpdateStudentDto) {
-    return `This action updates a #${id} student`;
+  update(id: number, updateStudentDto: UpdateStudentDto): object {
+    updateStudentDto.id = id;
+    return updateStudentDto;
   }
 
-  remove(id: number) {
+  remove(id: number): string {
     return `This action removes a #${id} student`;
   }
 }

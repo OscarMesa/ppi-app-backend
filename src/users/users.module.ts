@@ -11,7 +11,17 @@ import { UsersController } from './controller/users.controller';
 import { UsersService } from './services/users.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Student, Teacher, TeamMembers, TeamPpi, Course, AdvisoryStudentsPpi])],
+  imports: [
+    TypeOrmModule.forFeature([
+      User,
+      Student,
+      Teacher,
+      TeamMembers,
+      TeamPpi,
+      Course,
+      AdvisoryStudentsPpi,
+    ]),
+  ],
   controllers: [UsersController],
   providers: [UsersService],
   exports: [UsersService],

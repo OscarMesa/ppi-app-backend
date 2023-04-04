@@ -9,7 +9,6 @@ import {
 import { SwaggerModule } from '@nestjs/swagger';
 
 import { createdocument } from '@swagger/index';
-import sdk from '@common/traicing/autoTracing';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 
@@ -25,14 +24,7 @@ async function bootstrap(): Promise<void> {
   // getting the config service
   const configService = app.get(ConfigService);
 
-  // start telemetry
-  const activateTelemetrySDK = configService.get<string>(
-    'config.telemetry.activateSDK',
-  );
 
-  if (activateTelemetrySDK === 'true') {
-    sdk.start();
-  }
 
   //Active Cors
   app.enableCors({

@@ -15,6 +15,10 @@ const config = {
   username: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
+  extra: {
+    ssl: true
+  },
+  synchronize: true,
   entities: [srcPath + '/**/*.entity{.ts,.js}'],
   migrations: ['src/database/migrations/*{.ts,.js}'],
   cli: {
